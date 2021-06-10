@@ -11,6 +11,9 @@
 
     <artifactId>eladmin-system</artifactId>
 
+    <properties>
+        <lombok.version>1.18.16</lombok.version>
+    </properties>
     <dependencies>
         <!--Spring boot Web容器-->
         <dependency>
@@ -25,6 +28,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!--Spring boot JPA-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -36,6 +45,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- lombok依赖 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
 </project>
