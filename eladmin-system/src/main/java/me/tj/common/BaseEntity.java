@@ -2,10 +2,7 @@ package me.tj.common;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,12 +14,25 @@ import java.util.Date;
 @MappedSuperclass
 public abstract class BaseEntity {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "created_by")
     private String createdBy;
+
+    @Column(name = "created_at")
     private Date createdAt;
+
+    @Column(name = "update_by")
     private String updateBy;
+
+    @Column(name = "updateat")
     private Date updateAt;
+
+    @Column(name = "is_deleted")
     private Boolean deleted;
+
+    @Column(name = "version")
     private Integer version;
 }
